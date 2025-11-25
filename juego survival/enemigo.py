@@ -16,12 +16,12 @@ class Enemigo:
         #dibujar al enemigo
         self.rect = pygame.Rect(self.x, self. y, self.ancho, self.alto)
 
-    def mover(self, enemigo_x, enemigo_y):
+    def mover(self, jugador_x, jugador_y):
         if not self.vivo:
             return
         #calculamos la distancia hacia el objetivo
-        dx = enemigo_x - self.x 
-        dy = enemigo_y - self.y 
+        dx = jugador_x - self.x 
+        dy = jugador_y - self.y 
         distancia=math.sqrt(dx**2 + dy**2) 
 
         #Normalizamos pára mantener la direccion
@@ -109,3 +109,4 @@ class EnemigoTanque(Enemigo):
        #cargar imagen:
         self.imagen = pygame.image.load("assets/imagenes/enemigo_03.png")
         self.imagen = pygame.transform.scale(self.imagen, (self.ancho, self.alto))
+
